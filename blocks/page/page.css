@@ -1,0 +1,11 @@
+.page {
+    max-width: 1280px;
+    background-color: #000000;
+    margin: 0px;
+    padding: 0px
+}
+* {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: green;
+} 
