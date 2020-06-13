@@ -1,4 +1,16 @@
-.header__logo.css {
+.header__logo {
     max-width: 142px;
+    width: 100%;
     min-height: 33.4px;
+    padding-top: 45px;
+    padding-bottom: 40.6px;
+}
+
+@media screen and (max-width: 600px) {
+    .header__logo {
+        max-width: 103.74px;
+        min-height: 24.4px;
+        padding-top: 28px;
+        padding-bottom: 31.6px;
+    }
 }

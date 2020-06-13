@@ -3,6 +3,18 @@
 
 .profile {
     max-width: 882px;
-    padding: 40px 199px 51px;
-    display: grid;
+    padding: 0px 199px 51px;
+    display: flex;
+    margin: 0 auto;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .profile {
+        text-align: center;
+        max-width: 320px;
+        display: block;
+        padding: 0px 19px 36px;
+        overflow: hidden;
+    }
 }

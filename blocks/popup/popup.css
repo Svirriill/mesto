@@ -1,0 +1,31 @@
+@import url(./__container/popup__container.css);
+@import url(./__container-form/popup__container-form.css);
+@import url(./__container-title/popup__container-title.css);
+@import url(./__container-name/popup__container-name.css);
+@import url(./__container-text/popup__container-text.css);
+@import url(./__container-button/popup__container-button.css);
+@import url(./__button-esc/popup__button-esc.css);
+@import url(./__container-esc/popup__container-esc.css);
+@import url(./_opened/popup_opened.css);
+
+.popup {
+    font-family: "Inter", Arial, sans-serif;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+}
+
+.popup::before {
+    content: '';
+    background: #000000;
+    opacity: 0.5;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
