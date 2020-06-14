@@ -8,8 +8,15 @@
     padding: 0px auto;
 }
 
+@media screen and (max-width: 1080px) {
+    .footer__author {
+        padding: 0px 30px;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .footer__author {
         padding: 0px 19px;
         font-size: 14px;

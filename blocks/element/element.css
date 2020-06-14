@@ -2,6 +2,7 @@
 @import url(./__text/element__text.css);
 @import url(./__image/element__image.css);
 @import url(./__logo/element__logo.css);
+@import url(./__button/element__button.css);
 
 .element {
     font-family: "Inter", Arial, sans-serif;
