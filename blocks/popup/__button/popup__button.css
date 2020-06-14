@@ -1,4 +1,4 @@
-.popup__container-button {
+.popup__button {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -12,7 +12,7 @@
     border-radius: 2px;
 }
 
-.popup__container-button:hover {
+.popup__button:hover {
     background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }

@@ -9,7 +9,13 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1080px) {
+    .elements {
+        padding: 0px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .elements {
         padding: 0px 19px;
     }
