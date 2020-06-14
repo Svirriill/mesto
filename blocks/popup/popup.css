@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url(./__container/popup__container.css);
 @import url(./__form/popup__form.css);
 @import url(./__title/popup__title.css);
@@ -29,37 +28,3 @@
     left: 0px;
     z-index: 1;
 }
-
-=======
-@import url(./__container/popup__container.css);
-@import url(./__form/popup__form.css);
-@import url(./__title/popup__title.css);
-@import url(./__name/popup__name.css);
-@import url(./__text/popup__text.css);
-@import url(./__button/popup__button.css);
-@import url(./__esc/popup__esc.css);
-@import url(./_opened/popup_opened.css);
-
-.popup {
-    font-family: "Inter", Arial, sans-serif;
-    display: none;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-}
-
-.popup::before {
-    content: '';
-    background: #000000;
-    opacity: 0.5;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-}
-
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca

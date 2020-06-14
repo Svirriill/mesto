@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<<< HEAD:blocks/profile/__button-edit/profile__button-edit.css
 .profile__button-edit {
     max-width: 24px;
     width: 100%;
@@ -18,44 +16,3 @@
         max-height: 15px;
         padding-left: 1px;
     }
-========
-.profile-info__button {
-    display: inline-block;
-    max-width: 24px;
-    width: 100%;
-    max-height: 24px;
-    margin-left: 17px;
-    cursor: pointer;
-}
-
-.profile-info__button:hover {
-    opacity: 0.6;
-}
-
-@media screen and (max-width: 600px) {
-    .profile-info__button {
-=======
-.profile__button-edit {
-    max-width: 24px;
-    width: 100%;
-    max-height: 24px;
-    cursor: pointer;
-    align-self: center;
-}
-
-.profile__button-edit:hover {
-    opacity: 0.6;
-}
-
-@media screen and (max-width: 768px) {
-    .profile__button-edit {
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
-        max-width: 15px;
-        max-height: 15px;
-        padding-left: 1px;
-    }
-<<<<<<< HEAD
->>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca:blocks/profile-info/__button/profile-info__button.css
-=======
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
-}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .elements {
     max-width: 882px;
     width: 100%;
@@ -20,27 +19,4 @@
     .elements {
         padding: 0px 19px;
     }
-=======
-.elements {
-    max-width: 882px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    grid-gap: 21px 18px;
-    margin: 0 auto;
-    padding: 0 auto;
-    box-sizing: border-box;
-}
-
-@media screen and (max-width: 1080px) {
-    .elements {
-        padding: 0px 30px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .elements {
-        padding: 0px 19px;
-    }
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

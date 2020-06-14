@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<<< HEAD:blocks/popup/__name/popup__name.css
 .popup__name {
     font-weight: 400;
     font-size: 14px;
@@ -12,23 +10,3 @@
     border-top: none;
     border-bottom-color: rgba(84, 84, 84, 0.2);
 }
-========
-.popup__container-name {
-=======
-.popup__name {
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    max-width: 358px;
-    width: 100%;
-    margin: 0 auto 30px;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-    border-bottom-color: rgba(84, 84, 84, 0.2);
-}
-<<<<<<< HEAD
->>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca:blocks/popup/__container-name/popup__container-name.css
-=======
->>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
