@@ -4,7 +4,7 @@ let buttonSavePopup = document.querySelector('.popup__button');
 let buttonClosePopup = document.querySelector('.popup__esc');
 let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.popup__name');
-let jobInput = document.querySelector('.popup__text');
+let jobInput = document.querySelector('.popup__profession');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
 
