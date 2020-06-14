@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url(./__image/profile__image.css);
 @import url(./__button/profile__button.css);
 @import url(./__info/profile__info.css);
@@ -29,4 +30,37 @@
         max-width: 320px;
         padding: 0px 19px 36px;
     }
+=======
+@import url(./__image/profile__image.css);
+@import url(./__button/profile__button.css);
+@import url(./__info/profile__info.css);
+@import url(./__title/profile__title.css);
+@import url(./__subtitle/profile__subtitle.css);
+@import url(./__button-edit/profile__button-edit.css);
+
+
+.profile {
+    max-width: 882px;
+    padding: 0px 199px 51px;
+    display: flex;
+    margin: 0 auto;
+    
+}
+
+@media screen and (max-width: 1080px) {
+    .profile {
+        text-align: center;
+        max-width: 600px;
+        display: block;
+        padding: 0px 30px 36px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        max-width: 320px;
+        padding: 0px 19px 36px;
+    }
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

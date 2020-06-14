@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:blocks/popup/__button/popup__button.css
 .popup__button {
     font-weight: 400;
     font-size: 18px;
@@ -15,4 +17,32 @@
 .popup__button:hover {
     background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
+========
+.popup__container-button {
+=======
+.popup__button {
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 18px auto 0px;
+    background-color: #000000;
+    color: #FFFFFF;
+    max-width: 358px;
+    width: 100%;
+    min-height: 50px;
+    border-radius: 2px;
+}
+
+<<<<<<< HEAD
+.popup__container-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+>>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca:blocks/popup/__container-button/popup__container-button.css
+=======
+.popup__button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

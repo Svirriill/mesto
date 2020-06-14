@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url(./__logo/header__logo.css);
 
 
@@ -27,4 +28,35 @@
         margin-bottom: 38.25px;
         padding-left: 27px;
     }
+=======
+@import url(./__logo/header__logo.css);
+
+
+.header {
+    max-width: 882px;
+    margin: 0 auto 36.25px;
+    padding: auto;
+    border: 1px solid #545454;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom-color: rgba(84, 84, 84, 0.7);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1080px) {
+    .header {
+        max-width: 1080px;
+        margin-bottom: 40px;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        max-width: 768px;
+        margin-bottom: 38.25px;
+        padding-left: 27px;
+    }
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

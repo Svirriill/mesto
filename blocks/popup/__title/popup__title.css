@@ -1,7 +1,23 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:blocks/popup/__title/popup__title.css
 .popup__title {
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
     padding: 34px 64px 54px 36px;
     margin: 0px;
+========
+.popup__container-title {
+=======
+.popup__title {
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 34px 64px 54px 36px;
+    margin: 0px;
+<<<<<<< HEAD
+>>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca:blocks/popup/__container-title/popup__container-title.css
+=======
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

@@ -1,5 +1,19 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:blocks/popup/__form/popup__form.css
 .popup__form {
     display: block;
     max-width: 358px;
     margin: 0 auto;
+========
+.popup__container-form {
+    display: block;
+    max-width: 358px;
+    margin: 0 auto;
+>>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca:blocks/popup/__container-form/popup__container-form.css
+=======
+.popup__form {
+    display: block;
+    max-width: 358px;
+    margin: 0 auto;
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }

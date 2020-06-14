@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .footer__author {
     max-width: 882px;
     font-weight: 400;
@@ -22,4 +23,30 @@
         font-size: 14px;
         line-height: 17px;
     }
+=======
+.footer__author {
+    max-width: 882px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+    margin: 0px;
+    padding: 0px auto;
+}
+
+@media screen and (max-width: 1080px) {
+    .footer__author {
+        padding: 0px 30px;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__author {
+        padding: 0px 19px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+>>>>>>> d3c18c58176ce72b1116d92b3b2511c7067753ca
 }
