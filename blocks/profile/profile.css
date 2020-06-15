@@ -8,7 +8,7 @@
 
 .profile {
     max-width: 882px;
-    padding: 0px 199px 51px;
+    padding: 0 199px 51px;
     display: flex;
     margin: 0 auto;
     
@@ -19,7 +19,7 @@
         text-align: center;
         max-width: 600px;
         display: block;
-        padding: 0px 30px 36px;
+        padding: 0 30px 36px;
         overflow: hidden;
     }
 }
@@ -27,5 +27,5 @@
 @media screen and (max-width: 768px) {
     .profile {
         max-width: 320px;
-        padding: 0px 19px 36px;
+        padding: 0 19px 36px;
     }

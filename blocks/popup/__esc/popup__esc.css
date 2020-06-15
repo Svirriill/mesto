@@ -1,10 +1,6 @@
 .popup__esc {
     max-width: 41px;
     min-height: 41px;
-    transform: translate(75%, -75%);
-    position: absolute;
-    top: 0px;
-    right: 0px;
 }
 
 .popup__esc:hover {

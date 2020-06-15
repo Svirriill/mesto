@@ -1,4 +1,4 @@
-.popup__text {
+.popup__input {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -9,4 +9,10 @@
     border-left: none;
     border-right: none;
     border-bottom-color: rgba(84, 84, 84, 0.2);
+}
+
+@media screen and (max-width: 640px) {
+    .popup__input {
+        max-width: 206px;
+    }
 }
