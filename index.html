@@ -20,49 +20,14 @@
                     </div>
                 <button class="profile__button" type="button"><img src="./image/Vector_button.svg" alt="кнопка '+'"></button>
             </section>
-            <section class="elements">
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-                    <div class="element__text">
-                        <h3 class="element__title">Карачаевск</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h3 class="element__title">Гора Эльбрус</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                    <div class="element__text">
-                        <h3 class="element__title">Домбай</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1404681-unsplash_1.jpg" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h3 class="element__title">Гора Эльбрус</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                 </div>
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1556355-unsplash_1.jpg" alt="Домбай">
-                    <div class="element__text">
-                        <h3 class="element__title">Домбай</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./image/kirill-pershin-1088404-unsplash_1.jpg" alt="Карачаево-Черкесск">
-                    <div class="element__text">
-                        <h3 class="element__title">Карачаево-Черкесск</h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
-                    </div>
-                </div>
-            </section>
+            <ul class="elements">
+
+            </гд>
             </div>
             <footer class="footer">
                 <p class="footer__author">&copy; 2020 Mesto Russia</p>
             </footer>
-            <section class="popup">
+            <section class="popup popup_profile">
                 <div class="popup__container">
                     <h3 class="popup__title">Редактировать профиль</h3>
                     <form class="popup__form" action="post">
@@ -73,7 +38,27 @@
                     </form>
                 </div>
             </section>
+            <section class="popup popup_element">
+                <div class="popup__container">
+                    <h3 class="popup__title">Новое место</h3>
+                    <form class="popup__form popup__form_elements" action="post">
+                        <input class="popup__input popup__input_type_name-element" type="text" placeholder="Название">
+                        <input class="popup__input popup__input_type_src-element" type="text" placeholder="Ссылка на картинку">
+                        <button class="popup__button popup__button_elements" type="submit">Сохранить</button>
+                        <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc_elements"></button>
+                    </form>
+                </div>
+            </section>
         </div>
+        <template class="template-elements">
+                <li class="element">
+                    <img class="element__image" src="" alt="картинки разных мест">
+                    <button class="element__button-delete"><img class="element__image-delete" src="./image/Trash.svg" alt="удалить элемент"></button>
+                    <div class="element__text">
+                        <h3 class="element__title"></h3><button class="element__button"><img class="element__logo" src="./image/Group.svg" alt="лайк"></button>
+                    </div>
+                </li>
+        </template>
         <script src='./scripts/script.js'></script>
     </body>
 </html>

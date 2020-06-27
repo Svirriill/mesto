@@ -1,13 +1,17 @@
 @import url(./__title/element__title.css);
 @import url(./__text/element__text.css);
 @import url(./__image/element__image.css);
+@import url(./__button-delete/element__button-delete.css);
 @import url(./__logo/element__logo.css);
 @import url(./__button/element__button.css);
 
 .element {
+    position: relative;
     font-family: "Inter", Arial, sans-serif;
     max-width: 100%;
     width: 100%;
+    min-height: 361px;
+    height: 100%;
     border-radius: 10px;
     background: #FFFFFF;
 }
