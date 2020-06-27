@@ -35,27 +35,30 @@ let buttonSavePopupElements = document.querySelector('.popup__button_elements');
 let buttonClosePopup = document.querySelector('.popup__esc');
 let buttonClosePopupElements = document.querySelector('.popup__esc_elements');
 let formElement = document.querySelector('.popup__form');
-let formElements = document.querySelector('.popup__form_elements');
 let nameInput = document.querySelector('.popup__input_type_name');
 let jobInput = document.querySelector('.popup__input_type_info');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
 
 
-
-
-const templateElements = document.querySelector('.template-elements').content;
+const templateElements = document.querySelector('.template-elements');
 const elementList = document.querySelector('.elements');
+let formElements = document.querySelector('.popup__form_elements');
+let nameElement = formElements.querySelector('.popup__input_type_name-element');
+let linkElement = formElements.querySelector('.popup__input_type_src-element');
+let titleElement = document.querySelector('.element__title');
+let srcElement = document.querySelector('.element__img');
 
-function addCard(item) {
-    const element = templateElements.cloneNode(true);
-    element.querySelector('.element__title').textContent = item.name;
-    element.querySelector('.element__image').src = item.link;
+
+function addCard(formElements) {
+    const element = templateElements.content.cloneNode(true);
+    element.querySelector('.element__title').textContent = formElements.name;
+    element.querySelector('.element__image').src = formElements.link;
     elementList.prepend(element);
 }
 
-initialCards.forEach(item => {
-    addCard(item);
+initialCards.forEach(formElements => {
+    addCard(formElements);
 })
 
 function popupToggle (popup) {
@@ -77,22 +80,10 @@ let formSubmitHandler = (evt) => {
 let formSubmitElements = (evt) => {
     evt.preventDefault();
     popupToggle(popupElement);
-    addNewCard(templateElements);
+    formElements.name = nameElement.value;
+    formElements.link = linkElement.link;
+    addCard(formElements);
 }
-
-
-let addNewCard = (templateElements) => {
-    let nameElement = document.querySelector('.popup__input_type_name-element');
-    let imgElement = document.querySelector('.popup__input_type_src-element');
-    let titleElement = document.querySelector('.element__title');
-    let srcElement = document.querySelector('.element__image');
-    formSubmitElements = templateElements;
-    nameElement.textContent = titleElement;
-    imgElement.src = srcElement;
-    templateElements.prepend(titleElement.value);
-    templateElements.prepend(srcElement.src);
-}
-
 
 buttonOpenPopup.addEventListener('click', () => popupToggle(popupProfile));
 buttonOpenPopupElements.addEventListener('click', () => popupToggle(popupElement));
@@ -100,7 +91,6 @@ buttonClosePopup.addEventListener('click', () => popupToggle(popupProfile));
 buttonClosePopupElements.addEventListener('click', () => popupToggle(popupElement));
 buttonSavePopup.addEventListener('click', formSubmitHandler);
 buttonSavePopupElements.addEventListener('click', formSubmitElements);
-buttonSavePopupElements.addEventListener('click', addNewCard);
 formElement.addEventListener('submit', formSubmitHandler);
 formElements.addEventListener('submit', formSubmitElements);
 
