@@ -40,7 +40,6 @@ let jobInput = document.querySelector('.popup__input_type_info');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
 
-
 const templateElements = document.querySelector('.template-elements');
 const elementList = document.querySelector('.elements');
 let formElements = document.querySelector('.popup__form_elements');
@@ -54,12 +53,25 @@ function addCard(formElements) {
     const element = templateElements.content.cloneNode(true);
     element.querySelector('.element__title').textContent = formElements.name;
     element.querySelector('.element__image').src = formElements.link;
+
+    element.querySelector('.element__button').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('element__button_like');
+    
+})
+    addCardListeners(element);
     elementList.prepend(element);
 }
+
+function deleteCard(e) {
+  const element = e.target.closest('.element');
+  element.remove();
+};
 
 initialCards.forEach(formElements => {
     addCard(formElements);
 })
+
+
 
 function popupToggle (popup) {
     popup.classList.toggle('popup_opened');
@@ -81,9 +93,13 @@ let formSubmitElements = (evt) => {
     evt.preventDefault();
     popupToggle(popupElement);
     formElements.name = nameElement.value;
-    formElements.link = linkElement.link;
+    formElements.link = linkElement.value;
+    nameElement.value = '';
+    linkElement.value = '';
     addCard(formElements);
 }
+
+
 
 buttonOpenPopup.addEventListener('click', () => popupToggle(popupProfile));
 buttonOpenPopupElements.addEventListener('click', () => popupToggle(popupElement));
@@ -94,14 +110,6 @@ buttonSavePopupElements.addEventListener('click', formSubmitElements);
 formElement.addEventListener('submit', formSubmitHandler);
 formElements.addEventListener('submit', formSubmitElements);
 
-/*
-function cardDelete(e) {
-    const element = e.target.closest('.element');
-    element.remove();
+function addCardListeners(element) {
+    element.querySelector('.element__button-delete').addEventListener('click', deleteCard(element));
 }
-
-element.querySelector('.element__button-delete').addEventListener('click', cardDelete());*/
-
-
-
-

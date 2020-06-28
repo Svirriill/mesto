@@ -1,5 +1,5 @@
 .element__button-delete {
-    border-width: 0;
+    border: none;
     background-color: transparent;
     position: absolute;
     top: 18px;
