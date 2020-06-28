@@ -6,6 +6,9 @@
 @import url(./__button-esc/popup__button-esc.css);
 @import url(./__esc/popup__esc.css);
 @import url(./__esc/_elements/popup__esc_elements.css);
+@import url(./_image/popup_image.css);
+@import url(./__image/popup__image.css);
+@import url(./__figcaption/popup__figcaption.css);
 @import url(./_opened/popup_opened.css);
 
 .popup {

@@ -45,14 +45,21 @@
                         <input class="popup__input popup__input_type_name-element" type="text" placeholder="Название">
                         <input class="popup__input popup__input_type_src-element" type="text" placeholder="Ссылка на картинку">
                         <button class="popup__button popup__button_elements" type="submit">Сохранить</button>
-                        <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc_elements"></button>
+                        <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc popup__esc_elements"></button>
                     </form>
                 </div>
+            </section>
+            <section class="popup popup_image">
+                <figure class="popup__figure popup__figure_form">
+                    <img class="popup__image popup__image_opened" src="#" alt="выбранная картинка">
+                    <figcaption class="popup__figcaption"></figcaption>
+                </figure>
+                <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc popup__esc_image"></button>
             </section>
         </div>
         <template class="template-elements">
                 <li class="element">
-                    <img class="element__image" src="" alt="картинки разных мест">
+                    <img class="element__image" src="#" alt="картинки разных мест">
                     <button class="element__button-delete"><img class="element__image-delete" src="./image/Trash.svg" alt="удалить элемент"></button>
                     <div class="element__text">
                         <h3 class="element__title"></h3><button class="element__button"></button>
