@@ -12,17 +12,16 @@
                 <img class="header__logo" src="./image/Vector.svg" alt="лого">
             </header>
             <div class="main">
-            <section class="profile">
-                <img class="profile__image" src="./image/image.jpg" alt="Жак-Ив Кусто">
+                <section class="profile">
+                    <img class="profile__image" src="./image/image.jpg" alt="Жак-Ив Кусто">
                     <div class="profile__info">
                         <h1 class="profile__title">Жак-Ив Кусто</h1><img class="profile__button-edit" src="./image/Edit_Button.svg" alt="редактирование кнопки">
                         <h3 class="profile__subtitle">Исследователь океана</h3>
                     </div>
-                <button class="profile__button" type="button"><img src="./image/Vector_button.svg" alt="кнопка '+'"></button>
-            </section>
-            <ul class="elements">
-
-            </гд>
+                    <button class="profile__button" type="button"><img src="./image/Vector_button.svg" alt="кнопка '+'"></button>
+                </section>
+                <ul class="elements">
+                </ul>
             </div>
             <footer class="footer">
                 <p class="footer__author">&copy; 2020 Mesto Russia</p>
@@ -50,11 +49,11 @@
                 </div>
             </section>
             <section class="popup popup_image">
-                <figure class="popup__figure popup__figure_form">
-                    <img class="popup__image popup__image_opened" src="#" alt="выбранная картинка">
-                    <figcaption class="popup__figcaption"></figcaption>
-                </figure>
-                <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc popup__esc_image"></button>
+                    <section class="popup__figure popup__figure_form">
+                        <img class="popup__image popup__image_opened" src="#" alt="выбранная картинка">
+                        <p class="popup__figcaption"></p>
+                        <button class="popup__button-esc" type="button"><img src="./image/Close_Icon.png" alt="кнопка закрытия " class="popup__esc popup__esc_image"></button>
+                    </section>
             </section>
         </div>
         <template class="template-elements">
@@ -66,6 +65,7 @@
                     </div>
                 </li>
         </template>
+        <script src='./scripts/utils.js'></script>
         <script src='./scripts/script.js'></script>
     </body>
 </html>

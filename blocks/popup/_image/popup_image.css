@@ -1,14 +1,4 @@
-.popup_image {
-    font-family: "Inter", Arial, sans-serif;
-    display: none;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-}
-
-.popup_image::before {
+.popup.popup_image::before {
     content: '';
     background: #000000;
     opacity: 0.9;
