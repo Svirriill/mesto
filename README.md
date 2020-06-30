@@ -2,10 +2,9 @@
 
 ### Обзор
 
-* 4 блока: header, profile, elements, footer
+* 4 блока: header, profile, elements, footer;
+* 3 попапа(форма редактирования профиля, добавления карточек и открытия карточек на полный экран)
 * Адаптивная верстка
-* Добавлен js
+* Также добавлены возможности ставить/убирать лайки и удалять карточки
 
-**Ссылка**
-
-[Ссылка](https://svirriill.github.io/mesto/index.html)
+[**Ссылка**](https://svirriill.github.io/mesto/index.html)

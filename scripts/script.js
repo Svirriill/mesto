@@ -29,8 +29,6 @@ function addCard(formElements) {
 
     addCardListeners(element);
 
-
-
     return element;
 }
 
@@ -43,12 +41,10 @@ function deleteCard(e) {
     element.remove();
 }
 
-
-    initialCards.forEach(formElements => {
-        const element = addCard(formElements);
-        generateCard(element);
-    })
-
+initialCards.forEach(formElements => {
+    const element = addCard(formElements);
+    generateCard(element);
+})
 
 function popupToggle(popup) {
     popup.classList.toggle('popup_opened');
@@ -76,13 +72,13 @@ function saveCardsInfo() {
 }
 
 const formSubmitCards = (evt) => {
-    evt.preventDefault(); 
+    evt.preventDefault();
     saveCardsInfo();
     const element = addCard(formElements);
     generateCard(element);
 }
 
-function openPopuptCards(evt) {
+function openPopupCards(evt) {
     const element = evt.target.closest('.element__image');
     popupImage.src = element.src;
     popupFigcaption.textContent = element.alt;
@@ -102,9 +98,9 @@ function likeToggle(e) {
 }
 
 function addCardListeners(element) {
-    element.querySelector('.element__button-delete').addEventListener('click', deleteCard);
+    element.querySelector('.element__delete_button').addEventListener('click', deleteCard);
 
     element.querySelector('.element__button').addEventListener('click', likeToggle);
 
-    element.querySelector('.element__image').addEventListener('click', openPopuptCards);
+    element.querySelector('.element__image').addEventListener('click', openPopupCards);
 }
