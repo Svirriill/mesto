@@ -11,6 +11,9 @@
 @import url(./__figcaption/popup__figcaption.css);
 @import url(./_image/popup_image.css);
 @import url(./_opened/popup_opened.css);
+@import url(./__input/_type_error/popup__input_type_error.css);
+@import url(./__input-error/_active/popup__input-error_active.css);
+@import url(./__button/_inactive/popup__button_inactive.css);
 
 .popup {
     font-family: "Inter", Arial, sans-serif;

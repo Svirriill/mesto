@@ -1,3 +1,4 @@
+const popup = document.querySelector('.popup');
 const popupFigure = document.querySelector('.popup_image')
 const popupProfile = document.querySelector('.popup_profile');
 const popupElement = document.querySelector('.popup_element');
@@ -46,6 +47,12 @@ initialCards.forEach(formElements => {
     generateCard(element);
 })
 
+function popupRemoveEsc(evt) {
+    if(evt.keyCode == 27) {
+        popupProfile.classList.remove('popup_opened');
+    }
+}
+
 function popupToggle(popup) {
     popup.classList.toggle('popup_opened');
 }
@@ -87,9 +94,12 @@ function openPopupCards(evt) {
 
 buttonOpenPopupProfile.addEventListener('click', saveProfileInfo);
 buttonClosePopupProfile.addEventListener('click', () => popupToggle(popupProfile));
+popup.addEventListener('keydown', () => popupRemoveEsc(popupProfile));
 buttonOpenPopupElements.addEventListener('click', () => popupToggle(popupElement));
 buttonClosePopupElements.addEventListener('click', () => popupToggle(popupElement));
+buttonClosePopupElements.addEventListener('keydown', popupRemoveEsc);
 buttonClosePopupImage.addEventListener('click', () => popupToggle(popupFigure));
+buttonClosePopupImage.addEventListener('keydown', popupRemoveEsc);
 formElement.addEventListener('submit', formSumitProfileInfo);
 formElements.addEventListener('submit', formSubmitCards);
 
