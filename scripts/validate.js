@@ -1,7 +1,3 @@
-const inputElement = document.querySelector('.popup__input');
-const buttonElement = formElement.querySelector('.popup__button');
-
-
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add('popup__input_type_error');
@@ -30,17 +26,18 @@ const hasInvalidInput = (inputList) => {
     })
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, inactiveButtonElement) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add('popup__button_inactive');
-        buttonElement.setAttribute('disabled', true);
+        inactiveButtonElement.classList.add('popup__button_inactive');
+        inactiveButtonElement.setAttribute('disabled', true);
     } else {
-        buttonElement.classList.remove('popup__button_inactive');
-        buttonElement.removeAttribute('disabled');
+        inactiveButtonElement.classList.remove('popup__button_inactive');
+        inactiveButtonElement.removeAttribute('disabled');
     }
 };
 
 const setEventListeners = (formElement) => {
+    const buttonElement = formElement.querySelector('.popup__button');
     const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
@@ -51,7 +48,8 @@ const setEventListeners = (formElement) => {
     });
 };
 
-const formValidation = () => {
+const enableValidation = (config) => {
+    const {formElement, inputList, buttonElement, inactiveButtonClass, inputElement, errorElement} = config;
     const formList = Array.from(document.querySelectorAll('.popup__form'));
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
@@ -61,4 +59,11 @@ const formValidation = () => {
     });
 };
 
-formValidation();
+enableValidation({
+    formElement: '.popup__form',
+    inputList: '.popup__input',
+    buttonElement: '.popup__button',
+    inactiveButtonClass: 'popup__button_inactive',
+    inputElement: 'popup__input_type_error',
+    errorElement: 'popup__input-error_active'
+  });

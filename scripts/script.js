@@ -1,5 +1,4 @@
-const popup = document.querySelector('.popup');
-const popupFigure = document.querySelector('.popup_image')
+const popupFigure = document.querySelector('.popup_image');
 const popupProfile = document.querySelector('.popup_profile');
 const popupElement = document.querySelector('.popup_element');
 const buttonOpenPopupElements = document.querySelector('.profile__button');
@@ -47,12 +46,6 @@ initialCards.forEach(formElements => {
     generateCard(element);
 })
 
-function popupRemoveEsc(evt) {
-    if(evt.keyCode == 27) {
-        popupProfile.classList.remove('popup_opened');
-    }
-}
-
 function popupToggle(popup) {
     popup.classList.toggle('popup_opened');
 }
@@ -92,14 +85,41 @@ function openPopupCards(evt) {
     popupToggle(popupFigure);
 }
 
+function overlayCloseProfile(evt) {
+    if(evt.target.classList.contains('popup')) {
+        popupToggle(popupProfile);
+    }
+}
+
+function overlayCloseElement(evt) {
+    if(evt.target.classList.contains('popup')) {
+    popupToggle(popupElement);
+    }
+}
+
+function overlayCloseFigure(evt) {
+    if(evt.target.classList.contains('popup')) {
+    popupToggle(popupFigure);
+    }
+}
+
+function popupRemoveEsc(evt) {
+    if(evt.key === 'Escape') {
+        popupProfile.classList.remove('popup_opened');
+        popupElement.classList.remove('popup_opened');
+        popupFigure.classList.remove('popup_opened');
+    }
+}
+
 buttonOpenPopupProfile.addEventListener('click', saveProfileInfo);
 buttonClosePopupProfile.addEventListener('click', () => popupToggle(popupProfile));
-popup.addEventListener('keydown', () => popupRemoveEsc(popupProfile));
 buttonOpenPopupElements.addEventListener('click', () => popupToggle(popupElement));
 buttonClosePopupElements.addEventListener('click', () => popupToggle(popupElement));
-buttonClosePopupElements.addEventListener('keydown', popupRemoveEsc);
 buttonClosePopupImage.addEventListener('click', () => popupToggle(popupFigure));
-buttonClosePopupImage.addEventListener('keydown', popupRemoveEsc);
+popupProfile.addEventListener('click', overlayCloseProfile);
+popupElement.addEventListener('click', overlayCloseElement);
+popupFigure.addEventListener('click', overlayCloseFigure);
+document.addEventListener('keydown', popupRemoveEsc);
 formElement.addEventListener('submit', formSumitProfileInfo);
 formElements.addEventListener('submit', formSubmitCards);
 
