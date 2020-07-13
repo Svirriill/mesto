@@ -59,22 +59,18 @@ const deleteErrorValidation = (popup, config) => {
     const formElement = popup.querySelector(config.formSelector);
     const inputList = popup.querySelectorAll(config.inputList);
     inputList.forEach((inputElement) => {
-        inputElement.addEventListener('input', () => {
             hideInputError(config, formElement, inputElement);
-        });
     });
 };
 
 function popupToggle(popup) {
     popup.classList.toggle('popup_opened');
-    /*if (popup.classList.contains('popup_opened')) {
+    if (popup.classList.contains('popup_opened')) {
         enableValidation(config);
     } else {
+      const popupForm = popup.querySelector('.popup__form');
+      popupForm.reset();
         deleteErrorValidation(popup, config);
-    }
-}    */
-    if (!popup.classList.contains('popup_opened')) {
-    deleteErrorValidation(popup, config);
     }
 }
 
@@ -164,7 +160,3 @@ function addCardListeners(element) {
 
     element.querySelector('.element__image').addEventListener('click', openPopupCards);
 }
-
-
-
-enableValidation(config);
