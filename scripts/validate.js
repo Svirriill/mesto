@@ -23,7 +23,7 @@ const isValid = (config, formElement, inputElement) => {
 const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
-    })
+    });
 };
 
 const toggleButtonState = (config, inputList, inactiveButtonElement) => {
@@ -42,6 +42,7 @@ const setEventListeners = (formElement, config) => {
     toggleButtonState(config, inputList, buttonElement);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
+            hideInputError(config, formElement, inputElement);
             isValid(config, formElement, inputElement);
             toggleButtonState(config, inputList, buttonElement);
         });
@@ -49,7 +50,7 @@ const setEventListeners = (formElement, config) => {
 };
 
 const enableValidation = (config) => {
-    const {formSelector, inputList, buttonElement, inactiveButtonClass, inputElement, errorElement} = config;
+    const {formSelector} = config;
     const formList = Array.from(document.querySelectorAll(config.formSelector));
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
@@ -58,12 +59,3 @@ const enableValidation = (config) => {
         setEventListeners(formElement, config);
     });
 };
-
-enableValidation({
-    formSelector: '.popup__form',
-    inputList: '.popup__input',
-    buttonElement: '.popup__button',
-    inactiveButtonClass: 'popup__button_inactive',
-    inputElement: 'popup__input_type_error',
-    errorElement: 'popup__input-error_active'
-  });
