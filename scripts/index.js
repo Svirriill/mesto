@@ -59,7 +59,7 @@ const deleteErrorValidation = (popup, config) => {
     const formElement = popup.querySelector(config.formSelector);
     const inputList = popup.querySelectorAll(config.inputList);
     inputList.forEach((inputElement) => {
-            hideInputError(config, formElement, inputElement);
+        hideInputError(config, formElement, inputElement);
     });
 };
 
@@ -68,12 +68,11 @@ function popupToggle(popup) {
     if (popup.classList.contains('popup_opened')) {
         enableValidation(config);
     } else {
-      const popupForm = popup.querySelector('.popup__form');
-      popupForm.reset();
+        const popupForm = document.querySelector('.popup__form');
+        popupForm.reset();
         deleteErrorValidation(popup, config);
     }
 }
-
 
 function saveProfileInfo() {
     nameInput.value = title.textContent;
@@ -86,7 +85,6 @@ function formSumitProfileInfo(evt) {
     title.textContent = nameInput.value;
     subtitle.textContent = jobInput.value;
     popupToggle(popupProfile);
-
 }
 
 function saveCardsInfo() {
@@ -130,10 +128,12 @@ function overlayCloseFigure(evt) {
 }
 
 function popupRemoveEsc(evt) {
-    if (evt.key === 'Escape') {
-        popupProfile.classList.remove('popup_opened');
-        popupElement.classList.remove('popup_opened');
-        popupFigure.classList.remove('popup_opened');
+    if (event.keyCode !== 27) {
+        return;
+    }
+    const openedPopup = document.querySelector('.popup_opened')
+    if (openedPopup) {
+        popupToggle(openedPopup);
     }
 }
 
