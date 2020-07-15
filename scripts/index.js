@@ -131,7 +131,8 @@ function overlayCloseFigure(evt) {
 }
 
 function popupRemoveEsc(evt) {
-    if (event.keyCode !== 27) {
+    const escCode = 27;
+    if (evt.keyCode !== escCode) {
         return;
     }
     const openedPopup = document.querySelector('.popup_opened')
