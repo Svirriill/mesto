@@ -87,11 +87,14 @@ function formSumitProfileInfo(evt) {
     popupToggle(popupProfile);
 }
 
+function openToggleElement() {
+    popupToggle(popupElement);
+    formElements.reset();
+}
+
 function saveCardsInfo() {
     formElements.name = nameElement.value;
     formElements.link = linkElement.value;
-    nameElement.value = '';
-    linkElement.value = '';
     popupToggle(popupElement);
 }
 
@@ -139,7 +142,7 @@ function popupRemoveEsc(evt) {
 
 buttonOpenPopupProfile.addEventListener('click', saveProfileInfo);
 buttonClosePopupProfile.addEventListener('click', () => popupToggle(popupProfile));
-buttonOpenPopupElements.addEventListener('click', () => popupToggle(popupElement));
+buttonOpenPopupElements.addEventListener('click', openToggleElement);
 buttonClosePopupElements.addEventListener('click', () => popupToggle(popupElement));
 buttonClosePopupImage.addEventListener('click', () => popupToggle(popupFigure));
 popupProfile.addEventListener('click', overlayCloseProfile);
