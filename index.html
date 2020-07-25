@@ -32,7 +32,7 @@
         <section class="popup popup_profile" tabindex="-1">
             <div class="popup__container">
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form" action="post" novalidate>
+                <form class="popup__form popup__form_profile" action="post" novalidate>
                         <label class="popup__field">
                             <input id='name-input' class="popup__input popup__input_type_name" type="text"
                                 placeholder="Имя" required minlength="2" maxlength="40">
@@ -95,9 +95,8 @@
             </div>
         </li>
     </template>
-    <script src='./scripts/validate.js'></script>
     <script src='./scripts/utils.js'></script>
-    <script src='./scripts/index.js'></script>
+    <script type='module' src='./scripts/index.js'></script>
 </body>
 
 </html>
