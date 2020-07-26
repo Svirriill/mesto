@@ -14,7 +14,6 @@ const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_info');
 const title = document.querySelector('.profile__title');
 const subtitle = document.querySelector('.profile__subtitle');
-const templateElements = document.querySelector('.template-elements');
 const elementList = document.querySelector('.elements');
 const formElements = document.querySelector('.popup__form_elements');
 const nameElement = formElements.querySelector('.popup__input_type_name-element');
@@ -32,23 +31,8 @@ const config = {
 initialCards.forEach(({ name, link }) => {
     const card = new Card(name, link, '.template-elements');
     const cardElement = card.generateCard();
-    document.querySelector('.elements').prepend(cardElement);
+    elementList.prepend(cardElement);
 });
-
-function generateCard(element) {
-    elementList.prepend(element);
-}
-
-function addCard(formElements) {
-    const element = templateElements.content.cloneNode(true);
-    const elementImage = element.querySelector('.element__image');
-
-    element.querySelector('.element__title').textContent = formElements.name;
-    elementImage.src = formElements.link;
-    elementImage.alt = formElements.name;
-
-    return element;
-}
 
 function popupToggle(popup) {
     popup.classList.toggle('popup_opened');
@@ -126,8 +110,11 @@ function saveCardsInfo() {
 const formSubmitCards = (evt) => {
     evt.preventDefault();
     saveCardsInfo();
-    const element = addCard(formElements);
-    generateCard(element);
+    const link = linkElement.value;
+    const name = nameElement.value;
+    const card = new Card(name, link, '.template-elements');
+    const cardElement = card.generateCard();
+    document.querySelector('.elements').prepend(cardElement);
 }
 
 function overlayCloseProfile(evt) {
