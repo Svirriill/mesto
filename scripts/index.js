@@ -1,7 +1,7 @@
-import Card from './Card.js';
+import { initialCards, popupOpen, popupClose, popupFigure } from './utils.js'
+import { Card } from './Card.js';
 import FormValidator from './FormValidator.js';
 
-const popupFigure = document.querySelector('.popup_image');
 const popupProfile = document.querySelector('.popup_profile');
 const popupElement = document.querySelector('.popup_element');
 const buttonOpenPopupElements = document.querySelector('.profile__button');
@@ -38,16 +38,6 @@ const formValidatorProfile = new FormValidator(config, formElement);
 const formValidatorElement = new FormValidator(config, formAddCards);
 formValidatorProfile.enableValidation();
 formValidatorElement.enableValidation();
-
-function popupOpen(popup) {
-    popup.classList.add('popup_opened');
-    document.addEventListener('keyup', popupRemoveEsc);        
-}
-
-function popupClose(popup) {
-    popup.classList.remove('popup_opened');
-    document.removeEventListener('keyup', popupRemoveEsc);
-}
 
 function saveProfileInfo() {
     nameInput.value = title.textContent;
@@ -96,18 +86,6 @@ function overlayCloseElement(evt) {
 function overlayCloseFigure(evt) {
     if (evt.target.classList.contains('popup')) {
         popupClose(popupFigure);
-    }
-}
-
-function popupRemoveEsc(evt) {
-    const escCode = 27;
-    if (evt.keyCode !== escCode) {
-        return;
-    }
-    console.log("HELLO");
-    const openedPopup = document.querySelector('.popup_opened');
-    if (openedPopup) {
-        popupClose(openedPopup);
     }
 }
 

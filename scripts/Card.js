@@ -1,4 +1,6 @@
-export default class Card {
+import { popupOpen, popupFigure } from './utils.js'
+
+export class Card {
   constructor(name, link, templateElements) {
     this._name = name;
     this._link = link;
@@ -20,13 +22,13 @@ export default class Card {
     return this._element;
   }
 
-  _setToggleListener() {
+  _setToggleListener = () => {
     this._element.querySelector('.element__image').addEventListener('click', () => {
+      popupOpen(popupFigure);
       document.querySelector('.popup__image').src = this._link;
       document.querySelector('.popup__figcaption').textContent = this._name;
-      document.querySelector('.popup_image').classList.toggle('popup_opened');
     });
-  }
+  };
 
   _setDeleteListener() {
     this._element.querySelector('.element__delete_button').addEventListener('click', (e) => {
