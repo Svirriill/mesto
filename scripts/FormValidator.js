@@ -69,9 +69,13 @@ export default class FormValidator {
     };
 
     resetForm = () => {
-    const inputList = this._formElement.querySelectorAll(this._inputList);
-    inputList.forEach((inputElement) => {
-        this._hideInputError(inputElement);
-    });
+        const buttonElement = this._formElement.querySelector(this._buttonElement);
+        const inputList = Array.from(this._formElement.querySelectorAll(this._inputList));
+        this._toggleButtonState(inputList, buttonElement);
+        inputList.forEach((inputElement) => {
+            this._hideInputError(inputElement);
+            this._toggleButtonState(inputList, buttonElement);
+        });
+
     }
 }

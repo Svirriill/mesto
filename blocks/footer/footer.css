@@ -1,6 +1,6 @@
 @import url(./__author/footer__author.css);
 
-footer {
+.footer {
     font-family: "Inter", Arial, sans-serif;
     max-width: 882px;
     margin: auto;
