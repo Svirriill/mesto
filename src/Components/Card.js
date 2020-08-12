@@ -1,33 +1,25 @@
-import { popupOpen, popupFigure } from './utils.js'
-
 export class Card {
-  constructor(name, link, templateElements) {
-    this._name = name;
-    this._link = link;
-    this._templateElements = templateElements;
+  constructor({ data, handleCardClick }, containerSelector) {
+    this._name = data.name;
+    this._link = data.link;
+    this._containerSelector = containerSelector;
+    this._handleCardClick = handleCardClick;
+    // console.log(handleCardClick, data, containerSelector);
   }
 
-  _getTemplate() {
-    const cardElement = document.querySelector(this._templateElements).content.cloneNode(true);
+  _getTemplate = () => {
+    const cardElement = document.querySelector(this._containerSelector).content.cloneNode(true);
     return cardElement;
   }
 
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
-
+    this._elementImage = this._element.querySelector('.element__image');
     this._element.querySelector('.element__title').textContent = this._name;
     this._element.querySelector('.element__image').src = this._link;
 
     return this._element;
-  }
-
-  _setToggleListener() {
-    this._element.querySelector('.element__image').addEventListener('click', () => {
-      popupOpen(popupFigure);
-      document.querySelector('.popup__image').src = this._link;
-      document.querySelector('.popup__figcaption').textContent = this._name;
-    });
   }
 
   _setDeleteListener() {
@@ -44,8 +36,8 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._setToggleListener();
     this._setDeleteListener();
     this._setLikeListener();
+    this._element.querySelector('.element__image').addEventListener("click", this._handleCardClick);
   }
 }

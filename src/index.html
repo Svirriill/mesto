@@ -9,14 +9,14 @@
 <body>
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="images/Vector.svg" alt="лого">
+            <img class="header__logo" src="./images/Vector.svg" alt="лого">
         </header>
         <div class="main">
             <section class="profile">
-                <img class="profile__image" src="images/image.jpg" alt="Жак-Ив Кусто">
+                <img class="profile__image" src="./images/image.jpg" alt="Жак-Ив Кусто">
                 <div class="profile__info">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <img class="profile__button-edit" src="images/Edit_Button.svg" alt="редактирование кнопки">
+                    <img class="profile__button-edit" src="./images/Edit_Button.svg" alt="редактирование кнопки">
                     <h3 class="profile__subtitle">Исследователь океана</h3>
                 </div>
                 <button class="profile__button" type="button">
@@ -34,12 +34,12 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form popup__form_profile" action="post" novalidate>
                         <label class="popup__field">
-                            <input id='name-input' class="popup__input popup__input_type_name" type="text"
+                            <input id='name-input' class="popup__input popup__input_type_name" name="name" type="text"
                                 placeholder="Имя" required minlength="2" maxlength="40">
                             <span id='name-input-error' class='popup__input-error'></span>
                         </label>
                         <label class="popup__field">
-                            <input id='job-input' class="popup__input popup__input_type_info" type="text"
+                            <input id='job-input' class="popup__input popup__input_type_info" name="info" type="text"
                                 placeholder="О себе" required minlength="2" maxlength="200">
                             <span id='job-input-error' class='popup__input-error'></span>
                         </label>
@@ -56,16 +56,16 @@
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form_elements" action="post" novalidate>
                         <label class="popup__field">
-                            <input id='place-input' class="popup__input popup__input_type_name-element" type="text"
+                            <input id='place-input' class="popup__input popup__input_type_name-element" name="name" type="text"
                                 placeholder="Название" required minlength="1" maxlength="30">
                             <span id='place-input-error' class='popup__input-error'></span>
                         </label>
                         <label class="popup__field">
-                            <input id='link-input' class="popup__input popup__input_type_src-element" type="url"
+                            <input id='link-input' class="popup__input popup__input_type_src-element" name="link" type="url"
                                 placeholder="Ссылка на картинку" required>
                             <span id='link-input-error' class='popup__input-error'></span>
                         </label>
-                        <button class="popup__button popup__button_elements" type="submit">Сохранить</button>
+                        <button class="popup__button popup__button_elements"  type="submit">Сохранить</button>
                         <button class="popup__button-esc" type="button">
                             <img src="./images/Close_Icon.png" alt="кнопка закрытия "
                                 class="popup__esc popup__esc_elements">
@@ -95,7 +95,7 @@
             </div>
         </li>
     </template>
-    
+    <!-- <script type='module' src='./pages/index.js'></script> -->
 </body>
 
 </html>

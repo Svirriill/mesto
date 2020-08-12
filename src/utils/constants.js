@@ -24,26 +24,14 @@ export const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-export const popupFigure = document.querySelector('.popup_image');
 
-export const popupOpen = (popup) => {
-    popup.classList.add('popup_opened');
-    document.addEventListener('keyup', popupRemoveEsc);        
+export const config = {
+    formSelector: '.popup__form',
+    inputList: '.popup__input',
+    buttonElement: '.popup__button',
+    inactiveButtonClass: 'popup__button_inactive',
+    inputElement: 'popup__input_type_error',
+    errorElement: 'popup__input-error_active'
 };
 
-export const popupClose = (popup) => {
-    popup.classList.remove('popup_opened');
-    document.removeEventListener('keyup', popupRemoveEsc);
-};
-
-export function popupRemoveEsc(evt) {
-    const escCode = 27;
-    if (evt.keyCode !== escCode) {
-        return;
-    }
-    //console.log("HELLO");
-    const openedPopup = document.querySelector('.popup_opened');
-    if (openedPopup) {
-        popupClose(openedPopup);
-    }
-}
+export const formElement = document.querySelector('.popup__form');
