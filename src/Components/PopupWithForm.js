@@ -1,8 +1,4 @@
 import { Popup } from "./Popup.js";
-import { config, formElement } from '../utils/constants.js';
-import FormValidator from './FormValidator.js';
-
-const formValidatorProfile = new FormValidator(config, formElement);
 
 export class PopupWithForm extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
@@ -21,8 +17,6 @@ export class PopupWithForm extends Popup {
     super.close();
     this._inputList = this._popup.querySelector('.popup__form');
     this._inputList.reset();
-
-    formValidatorProfile.resetForm();
   }
 
   setEventListeners() {
@@ -33,6 +27,8 @@ export class PopupWithForm extends Popup {
       const data = this._getInputValues()
       this._handleFormSubmit(data);
       this.close();
+      // блокирую кнопку, т.к. при двойном клике, из-за очистки формы удаляется данные с профиля
+      this._formElement.querySelector('.popup__button').setAttribute('disabled', true);
     });
   }
 }

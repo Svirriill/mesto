@@ -4,7 +4,6 @@ export class Card {
     this._link = data.link;
     this._containerSelector = containerSelector;
     this._handleCardClick = handleCardClick;
-    // console.log(handleCardClick, data, containerSelector);
   }
 
   _getTemplate = () => {
@@ -17,7 +16,7 @@ export class Card {
     this._setEventListeners();
     this._elementImage = this._element.querySelector('.element__image');
     this._element.querySelector('.element__title').textContent = this._name;
-    this._element.querySelector('.element__image').src = this._link;
+    this._elementImage.src = this._link;
 
     return this._element;
   }
@@ -38,6 +37,7 @@ export class Card {
   _setEventListeners() {
     this._setDeleteListener();
     this._setLikeListener();
-    this._element.querySelector('.element__image').addEventListener("click", this._handleCardClick);
+    this._element.querySelector('.element__image').addEventListener("click", () => this._handleCardClick(this._name, this._link)
+    );
   }
 }

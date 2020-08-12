@@ -1,8 +1,10 @@
 import { Popup } from "./Popup.js";
 
 export class PopupWithImage extends Popup {
-    constructor(popupSelector) {
+    constructor(popupSelector, popupImage, popupTitle) {
         super(popupSelector);
+        this._popupImage = document.querySelector(popupImage);
+        this._popupTitle = document.querySelector(popupTitle);
     }
 
     _setEventListeners() {
@@ -11,8 +13,6 @@ export class PopupWithImage extends Popup {
 
     open(name, link) {
         super.open();
-        this._popupImage = document.querySelector('.popup__image');
-        this._popupTitle = document.querySelector('.popup__figcaption');
         this._popupImage.src = link;
         this._popupTitle.alt = name;
         this._popupTitle.textContent = name;

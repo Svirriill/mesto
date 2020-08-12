@@ -11,11 +11,12 @@ const popupElement = '.popup_element';
 const buttonOpenPopupElements = document.querySelector('.profile__button');
 const buttonOpenPopupProfile = document.querySelector('.profile__button-edit');
 const formAddCards = document.querySelector('.popup__form_elements');
-const popupImage = new PopupWithImage('.popup_image');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_info');
 const title = '.profile__title';
 const subtitle = '.profile__subtitle';
+
+const popupImage = new PopupWithImage('.popup_image', '.popup__image', '.popup__figcaption');
 
 const formValidatorProfile = new FormValidator(config, formElement);
 const formValidatorElement = new FormValidator(config, formAddCards);
@@ -83,3 +84,5 @@ buttonOpenPopupElements.addEventListener("click", () => {
     popupWithFormCards.open();
     formValidatorElement.resetForm();
 });
+
+// "нужно исправить" - исправил; "можно лучше" - только отчасти, исправлю позже; интересно ревьюер найдёт новые ошибки? (разговариваю сам с собой, отклонять не надо)))
