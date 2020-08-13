@@ -84,5 +84,3 @@ buttonOpenPopupElements.addEventListener("click", () => {
     popupWithFormCards.open();
     formValidatorElement.resetForm();
 });
-
-// "нужно исправить" - исправил; "можно лучше" - только отчасти, исправлю позже; интересно ревьюер найдёт новые ошибки? (разговариваю сам с собой, отклонять не надо)))

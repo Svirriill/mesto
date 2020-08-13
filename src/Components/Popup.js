@@ -17,7 +17,6 @@ export class Popup {
         const ESC_CODE = 'Escape';
         if (evt.code === ESC_CODE) {
           this.close();
-        //   console.log(evt);
         }
       }
 
@@ -34,7 +33,7 @@ export class Popup {
 
     close() {
         this._popup.classList.remove('popup_opened');
-        this._popup.removeEventListener('keyup', this._handleEscClose);
+        document.removeEventListener('keyup', this._handleEscClose);
         this._popup.removeEventListener('keyup', this._handleOverlayClose);
     }
 }
