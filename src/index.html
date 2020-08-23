@@ -18,9 +18,9 @@
                 </div>
                 
                 <div class="profile__info">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
+                    <h1 class="profile__title">Загрузка...</h1>
                     <img class="profile__button-edit" src="./images/Edit_Button.svg" alt="редактирование кнопки">
-                    <h3 class="profile__subtitle">Исследователь океана</h3>
+                    <h3 class="profile__subtitle">Загрузка...</h3>
                 </div>
                 <button class="profile__button" type="button">
                     <img src="./images/Vector_button.svg" alt="кнопка '+'">
@@ -36,7 +36,7 @@
         <section class="popup popup_profile" tabindex="-1">
             <div class="popup__container">
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form popup__form_profile" action="post" novalidate>
+                <form class="popup__form popup__form_profile" action="#" novalidate>
                         <label class="popup__field">
                             <input id='name-input' class="popup__input popup__input_type_name" name="name" type="text"
                                 placeholder="Имя" required minlength="2" maxlength="40">
@@ -108,13 +108,15 @@
         </section>
 
         <section class="popup popup_delete-image">
-            <form class="popup__form">
-                <h3 class="popup__title">Вы уверены?</h3>
-                <button class="popup__button popup__button_delete"  type="submit">ДА</button>
-                <button class="popup__button-esc" type="button">
+            <div class="popup__container">
+                <h3 class="popup__title popup__title_delete-image">Вы уверены?</h3>
+                <form class="popup__form">
+                    <button class="popup__button popup__button_delete" type="submit">ДА</button>
+                    <button class="popup__button-esc" type="button">
                     <img src="./images/Close_Icon.png" alt="кнопка закрытия " class="popup__esc popup__esc_image">
-                </button>
-            </form>
+                    </button>
+                </form>
+            </div>
         </section>
 
     </div>
@@ -126,7 +128,10 @@
             </button>
             <div class="element__text">
                 <h3 class="element__title"></h3>
-                <button class="element__button element__button_like"></button>
+                <div class="element__like-container">
+                    <button class="element__like"></button>
+                    <div class="element__like-number">0</div>
+                </div>
             </div>
         </li>
     </template>

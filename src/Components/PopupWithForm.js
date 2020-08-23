@@ -27,7 +27,7 @@ export class PopupWithForm extends Popup {
       const data = this._getInputValues()
       this._handleFormSubmit(data);
       this.close();
-      // блокирую кнопку, т.к. при двойном клике, из-за очистки формы удаляется данные с профиля
+      // блокирую кнопку, т.к. при двойном клике, из-за очистки формы удаляются данные с профиля
       this._formElement.querySelector('.popup__button').setAttribute('disabled', true);
     });
   }

@@ -36,4 +36,9 @@ export class Popup {
         document.removeEventListener('keyup', this._handleEscClose);
         this._popup.removeEventListener('keyup', this._handleOverlayClose);
     }
+
+    handleButton(textButton) {
+        const buttonForm = this._popup.querySelector('.popup__button');
+        buttonForm.textContent = textButton;
+    }
 }

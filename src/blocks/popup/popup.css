@@ -1,8 +1,10 @@
 @import url(./__container/popup__container.css);
 @import url(./__form/popup__form.css);
 @import url(./__title/popup__title.css);
+@import url(./__title/_delete-image/popup__title_delete-image.css);
 @import url(./__input/popup__input.css);
 @import url(./__button/popup__button.css);
+@import url(./__button/_delete/popup__button_delete.css);
 @import url(./__button-esc/popup__button-esc.css);
 @import url(./__esc/popup__esc.css);
 @import url(./__figure/popup__figure.css);
