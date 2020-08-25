@@ -1,5 +1,5 @@
 export class Card {
-  constructor( data, { handleCardClick, handleButtonRemove, handleButtonLike }, containerSelector) {
+  constructor(data, { handleCardClick, handleButtonRemove, handleButtonLike }, containerSelector) {
     this._name = data.name;
     this._link = data.link;
     this._id = data.id;
@@ -17,7 +17,7 @@ export class Card {
 
   generateCard(id) {
     this._element = this._getTemplate();
-  
+
     this._elementLikeNumber = this._element.querySelector('.element__like-number');
     this._elementImage = this._element.querySelector('.element__image');
     this._elementRemoveCard = this._element.querySelector('.element__delete');
@@ -39,9 +39,9 @@ export class Card {
 
   setColorLike(userId, arrLikes) {
     arrLikes.forEach((element) => {
-      element._id === userId
-        ? this._elementLike.classList.add("element__like_active")
-        : null;
+      if (element._id === userId) {
+        this._elementLike.classList.add("element__like_active")
+      }
     });
   }
 
@@ -56,7 +56,7 @@ export class Card {
         acc.push(item.name);
         return acc;
       }, [])
-    }
+  }
 
   getElementLike() {
     return this._elementLike;

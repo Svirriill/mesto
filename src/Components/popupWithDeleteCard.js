@@ -1,9 +1,8 @@
 import { Popup } from "./Popup.js";
 
 export class PopupWithDeleteCard extends Popup {
-  constructor( popupSelector) {
+  constructor(popupSelector) {
     super(popupSelector)
-
   }
 
   setEventListeners() {
@@ -12,12 +11,14 @@ export class PopupWithDeleteCard extends Popup {
     this._form.addEventListener('click', (evt) => {
       evt.preventDefault();
       this._handleFormDelete();
-      this.close();
     });
   }
-  
+
   handlerDelete(handler) {
     this._handleFormDelete = handler;
-    }
+  }
 
+  close() {
+    super.close();
+  }
 }

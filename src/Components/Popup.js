@@ -16,9 +16,9 @@ export class Popup {
     _handleEscClose = (evt) => {
         const ESC_CODE = 'Escape';
         if (evt.code === ESC_CODE) {
-          this.close();
+            this.close();
         }
-      }
+    }
 
     setEventListeners() {
         this._popup.querySelector('.popup__esc').addEventListener('click', () => this.close());
