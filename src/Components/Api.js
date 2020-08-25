@@ -4,27 +4,27 @@ export class Api {
     this._headers = options.headers;
   }
   
-    _handleResponse(res) {
+  _handleCheck(res) {
     if (res.ok) {
       return res.json();
     }
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  getUserData() {
+  getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     })
-      .then(this._handleResponse)
+      .then(this._handleCheck)
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 
-  patchUserData(name, about) {
+  patchUserInfo(name, about) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
@@ -32,7 +32,7 @@ export class Api {
         name,
         about,
       }),
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 
   postCard(name, link) {
@@ -43,28 +43,28 @@ export class Api {
         name,
         link,
       }),
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 
   putLike(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
       headers: this._headers,
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 
   deleteLike(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
   
   patchAvatar(avatar) {
@@ -75,6 +75,6 @@ export class Api {
       body: JSON.stringify(
         avatar,
       ),
-    }).then(this._handleResponse);
+    }).then(this._handleCheck);
   }
 }

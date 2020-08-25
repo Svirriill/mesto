@@ -13,7 +13,6 @@ const popupElement = '.popup_element';
 const buttonOpenPopupElements = document.querySelector('.profile__button');
 const buttonOpenPopupProfile = document.querySelector('.profile__button-edit');
 const buttonOpenPopupAvatar = document.querySelector('.profile__image');
-const element = document.querySelector('.element');
 const formAddCards = document.querySelector('.popup__form_elements');
 const formAddAvatar = document.querySelector('.popup__form_avatar');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -21,7 +20,6 @@ const jobInput = document.querySelector('.popup__input_type_info');
 const title = '.profile__title';
 const subtitle = '.profile__subtitle';
 const avatarEdit = document.querySelector('.profile__image');
-const buttonDeleteCard = document.querySelector('.element__button_delete');
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-14',
@@ -30,20 +28,6 @@ const api = new Api({
     'Content-Type': 'application/json'
 }
 })
-// .then((res) => res.json())
-// .then((result) => {
-//     avatarEdit.src = result.avatar;
-//     newUserName = result.name;
-//     newUserAbout = result.about;
-//     const userInformation = new UserInfo({userName: newUserName, userInfo: newUserAbout});
-
-//     userInformation.getUserInfo(result);
-//     console.log(result);
-// })
-
-
-
-
 
 const formValidatorProfile = new FormValidator(config, formElement);
 const formValidatorElement = new FormValidator(config, formAddCards);
@@ -57,34 +41,12 @@ const userInformation = new UserInfo(title, subtitle);
 
 const popupImage = new PopupWithImage('.popup_image', '.popup__image', '.popup__figcaption');
 
-
-
-const initialCards = [];
-
-
-
-// api.getUserData()
-// .then((data) => {
-//     userInformation.setUserInfo(data);
-// })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-
-// api.getInitialCards()
-// .then((item) => {
-//     section.renderItems(item);
-// })
-// .catch((err) => {
-//     console.log(`Ошибка: ${err}`);
-//   });
-    
 const popupWithFormProfile = new PopupWithForm({
     popupSelector: '.popup_profile',
     handleFormSubmit: (data) => {
         popupWithFormProfile.handleButton('Cохранение...');
             api
-            .patchUserData(data.name, data.about)
+            .patchUserInfo(data.name, data.about)
         .then((data) => {
           userInformation.setUserInfo(data);
           popupWithFormProfile.close();
@@ -100,7 +62,7 @@ const popupWithFormCards = new PopupWithForm({
       popupWithFormCards.handleButton('Cохранение...');
             api
       .postCard(item.name, item.link)
-      .then(handleData)
+      .then(handleInfo)
       .catch((err) => console.log(err))
     }
 });
@@ -120,36 +82,28 @@ handleFormSubmit: (data) => {
 );
 popupWithFormAvatar.setEventListeners();
 
-const popupWithDeleteCard = new PopupWithDeleteCard('.popup_delete-image', {
-  submitButton: (data) = {
-
-  }
-})
+const popupWithDeleteCard = new PopupWithDeleteCard('.popup_delete-image');
 popupWithDeleteCard.setEventListeners();
 
 const section = new Section('.elements');
-// function buttonDelete() {
-//   buttonDeleteCard.addEventListener('click', () => {
 
-//   })
-// }
-const handleData = (item) => {
+const handleInfo = (item) => {
     const card = new Card(
         item, {
         handleCardClick: () => {
             popupImage.open(item.name, item.link)
             popupImage.setEventListeners(item.name, item.link);
         },
-        handleButtonRemove: () => {
+        handleButtonRemove: (card) => {
             popupWithDeleteCard.open();
-            popupWithDeleteCard.handleButton(function () {
+            popupWithDeleteCard.handlerDelete(() => {
               api
                 .deleteCard(item._id)
                 .then(() => {
                   card.deleteCard();
                 })
-                .catch((err) => console.log(err));
-          })
+                .catch((err) => console.log(err))
+            })
         },
         handleButtonLike: () => {
       if (!card.getElementLike().classList.contains("element__like_active")) {
@@ -180,12 +134,12 @@ const handleData = (item) => {
   };
   
 
-Promise.all([api.getInitialCards(), api.getUserData()])
+Promise.all([api.getInitialCards(), api.getUserInfo()])
  .then((data) => {
     userInformation.setUserInfo(data[1]);
     avatarEdit.src = data[1].avatar;
 
-    section.renderItems(data[0].reverse(), handleData);    
+    section.renderItems(data[0].reverse(), handleInfo);    
   })
   .catch((err) => console.log(err));
 

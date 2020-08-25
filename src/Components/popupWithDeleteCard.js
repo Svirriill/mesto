@@ -1,38 +1,23 @@
 import { Popup } from "./Popup.js";
 
 export class PopupWithDeleteCard extends Popup {
-  constructor( popupSelector, { submitButton } ) {
+  constructor( popupSelector) {
     super(popupSelector)
-    this._submitButton = submitButton;
+
   }
 
   setEventListeners() {
     super.setEventListeners();
-    this._submitButton.addEventListener('click', () => {
-        this._submit();
-        this.close()
+    this._form = this._popup.querySelector('.popup__form');
+    this._form.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      this._handleFormDelete();
+      this.close();
     });
   }
+  
+  handlerDelete(handler) {
+    this._handleFormDelete = handler;
+    }
+
 }
-// export class PopupWithDeleteCard extends Popup {
-//   constructor(popupSelector) {
-//     super(popupSelector);
-//     this._deleteCard = this._deleteCard.bind(this);
-//   }
-
-//   close() {
-//     super.close();
-//     this._button.removeEventListener("click", this._deleteCard);
-//   }
-
-//   _deleteCard() {
-//     this._handleApi();
-//     this.close();
-//   }
-
-//   handleButton(handleApi) {
-//     this._handleApi = handleApi;
-//     this._button = this._popup.querySelector('.popup__button_delete');
-//     this._button.addEventListener("click", this._deleteCard);
-//   }
-// }

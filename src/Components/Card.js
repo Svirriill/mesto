@@ -11,7 +11,7 @@ export class Card {
   }
 
   _getTemplate = () => {
-    const cardElement = document.querySelector(this._containerSelector).content.cloneNode(true);;
+    const cardElement = document.querySelector(this._containerSelector).content.cloneNode(true).querySelector('.element');
     return cardElement;
   }
 
@@ -31,12 +31,11 @@ export class Card {
     return this._element;
   }
 
-  deleteCard() {
+  deleteCard = () => {
     this._element.remove();
     this._element = null;
     this._removeEventListeners();
-
-  }
+  };
 
   setColorLike(userId, arrLikes) {
     arrLikes.forEach((element) => {
@@ -70,7 +69,7 @@ export class Card {
 
   _setEventListeners() {
     this._elementLike.addEventListener("click", this._handleButtonLike);
-    this._elementRemoveCard.addEventListener("click", this._handleButtonRemove);
+    this._elementRemoveCard.addEventListener("click", () => this._handleButtonRemove(this));
     this._elementImage.addEventListener("click", () => this._handleCardClick(this._name, this._link));
   }
 
