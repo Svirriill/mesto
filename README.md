@@ -7,4 +7,5 @@
 * Адаптивная верстка
 * Также добавлены возможности ставить/убирать лайки и удалять карточки
 
-[**Ссылка**](https://svirriill.github.io/mesto/index.html)
+### Ссылка на сайт
+https://svirriill.github.io/mesto/index.html
